@@ -1,0 +1,202 @@
+@import 'bourbon'; // http://bourbon.io/
+
+@import '../partials/variables'; // colors, fonts etc...
+
+@import '../partials/mixins'; // custom mixins
+
+@import '../partials/layout'; // responsive grid and media queries
+
+/* -------------------------------- 
+
+Primary style
+
+-------------------------------- */
+
+
+*, *::after, *::before {
+	box-sizing: border-box; 
+}
+
+html { 
+	font-size: 62.5%;
+	@include scrollbars(1rem, $color-1);  
+}
+
+body {
+	font: {
+		size: 1.6rem;
+		family: $primary-font;
+	}
+	color: $white;
+	background-color: $color-bg;
+	@include font-smoothing;
+
+}
+
+html, body {
+	height: 100%;
+}
+
+
+a {
+	color: $color-2;
+	text-decoration: none;
+}
+
+
+
+::selection{
+	color:$white;
+	background-color: $color-1;
+}
+
+
+h1{
+	font:{
+		size: 48px;
+		family: $primary-font;
+	}
+	margin-bottom: 30px;
+}
+h3{
+	font:{
+		size: 34px;
+		family: $primary-font;
+	}
+}
+	
+h4{
+	font:{
+		size: 16px;
+		family: $secondary-font;
+	}
+}
+
+/* -------------------------------- 
+
+  Enterence
+
+-------------------------------- */
+
+.container{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+
+}
+
+
+
+.box-container{
+	margin:auto;
+	display: block;
+	width: 100%;
+    position: relative;
+    height: 75%;
+}
+
+.box{
+	border-radius: 30px;
+	opacity: 0.7;
+	background-color: $color-box;
+	position: absolute;
+	left:0;
+	right:0;
+	margin:auto;
+	bottom:0;
+	top:0;
+	box-shadow: 10px 10px 15px rgba(0,0,0,0.75);
+	transition: all .5s ease;
+
+	&:nth-of-type(1){
+			@include size(50%);
+			z-index: 10;
+			right:-10%;
+			bottom:-40%;
+			&:hover{
+				@include size(53%);
+			}
+		}
+
+		&:nth-of-type(2){
+			@include size(55%);
+			z-index: 9;
+			left:-30%;
+			bottom:-10%;
+			&:hover{
+				@include size(58%);
+			}
+		}
+
+		&:nth-of-type(3){
+			@include size(60%);
+			z-index: 8;
+			right: -20%;
+			top: -5%;
+			&:hover{
+				@include size(63%);
+			}
+		}
+
+		&:nth-of-type(4){
+			@include size(75%);
+			z-index: 7;
+			left:-3%;
+			&:hover{
+				@include size(78%);
+			}
+		}
+
+	h3{
+		opacity: 0;
+		bottom: 10%;
+		transition: all .5s ease;
+		position: absolute;
+		text-align: center;	
+		width: 100%;
+		padding:10%;
+	}
+
+		&:hover{
+			z-index: 20;
+			opacity: 0.8;
+
+			h3{
+				opacity: 1;
+			}
+		}
+
+
+
+}
+
+.selected-box{
+		left:0;
+		right:0;
+		margin:auto;
+		bottom:0;
+		top:0;
+		@include size(85%);
+		opacity: 1;
+		z-index: 20;
+	}
+
+
+.description-container{
+	display: block;
+    position: relative;
+    text-align: center;
+    opacity: 0;
+   	transition: opacity .5s ease;	
+   	width: 80%;
+   	margin:auto;
+}
+
+  	.selected{
+   		opacity: 1;
+   	}
+
+
+
+
+
