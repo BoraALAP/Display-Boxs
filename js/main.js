@@ -33,14 +33,22 @@ const pageTitleOnBox3 = document.querySelector( '.box:nth-of-type(3)>h3');
 const pageTitleOnBox4 = document.querySelector( '.box:nth-of-type(4)>h3');
 
 
+// for(var i= 1; i < 4; i += 1){
+	
+// }
+
 box1.addEventListener('click', () =>{
 	descriptionContainer.addClass('selected');
+	
+	box1.className += " selected-box";
+
 	pageTitle.innerHTML = firstScreen.title;
 	pageDescription.innerHTML = firstScreen.description;
 })
 
 box2.addEventListener('click', () =>{
 	descriptionContainer.addClass('selected');
+	box2.className += " selected-box";
 	pageTitle.innerHTML = secondScreen.title;
 	pageDescription.innerHTML = secondScreen.description;
 
@@ -48,6 +56,7 @@ box2.addEventListener('click', () =>{
 
 box3.addEventListener('click', () =>{
 	descriptionContainer.addClass('selected');
+	box3.className += " selected-box";
 	pageTitle.innerHTML = thirdScreen.title;
 	pageDescription.innerHTML = thirdScreen.description;
 
@@ -55,6 +64,7 @@ box3.addEventListener('click', () =>{
 
 box4.addEventListener('click', () =>{
 	descriptionContainer.addClass('selected');
+	box4.className += " selected-box";
 	pageTitle.innerHTML = fourthScreen.title;
 	pageDescription.innerHTML = fourthScreen.description;
 
